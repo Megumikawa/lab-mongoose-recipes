@@ -23,33 +23,48 @@ mongoose
   })
 
   //Iteration2
-  .then(() => {
-    Recipe.create(someRecipe)
-    .then((result) => {
-      console.log("title",result)
-    })
-    .catch(() => {
-      console.log('Error')
-    })
-  })
+  // .then(() => {
+  //   Recipe.create(someRecipe)
+  //   .then((result) => {
+  //     console.log("title",result)
+  //   })
+  //   .catch(() => {
+  //     console.log('Error')
+  //   })
+  // })
   
   //Iteration3
-  Recipe.insertMany(data)
-  .then(() => {
-    console.log('multiple recipes created')
-  })
-  .catch(() => {
-    console.log('Something went wrong while inserting')
-  })
+  // Recipe.insertMany(data)
+  // .then(() => {
+  //   console.log('multiple recipes created')
+  // })
+  // .catch(() => {
+  //   console.log('Something went wrong while inserting')
+  // })
 
 //Iteration4
-Recipe.findOneAndUpdate( {title: 'Rigatoni alla Genovese '}, {duration: 100} )
+  // Recipe.findOneAndUpdate( {title: 'Rigatoni alla Genovese '}, {duration: 100} )
+  // .then((result) => {
+  //   console.log('The duration have have been updating')
+  // })
+  // .catch(() => {
+  //   console.log('Something went wrong while updating')
+  // })
+
+// Iteration5
+  Recipe.deleteOne({title:'Carrot Cake'})
   .then((result) => {
-    console.log('The duration have have been updating')
+    console.log('Carrot cake is deleted'.result)
   })
+
+  //Iteration6
+  // mongoose.connection.close()
+
   .catch(() => {
-    console.log('Something went wrong while updating')
+    console.log('Detlete is failed')
   })
+
+
 
 
 
