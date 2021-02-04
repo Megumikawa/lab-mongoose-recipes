@@ -42,6 +42,18 @@ mongoose
     console.log('Something went wrong while inserting')
   })
 
+//Iteration4
+Recipe.findOneAndUpdate( {title: 'Rigatoni alla Genovese '}, {duration: 100} )
+  .then((result) => {
+    console.log('The duration have have been updating')
+  })
+  .catch(() => {
+    console.log('Something went wrong while updating')
+  })
+
+
+
+
   .catch(error => {
     console.error('Error connecting to the database', error);
   });
