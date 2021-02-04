@@ -23,33 +23,36 @@ mongoose
   })
 
   //Iteration2
-  // .then(() => {
-  //   Recipe.create(someRecipe)
-  //   .then((result) => {
-  //     console.log("title",result)
-  //   })
-  //   .catch(() => {
-  //     console.log('Error')
-  //   })
-  // })
+  .then(() => {
+    let createRecipe = Recipe.create(SomeRecipe)
+    .then((result) => {
+      console.log("title",result)
+    })
+    .catch(() => {
+      console.log('Error while inserting')
+    })
+  })
   
   //Iteration3
-  // Recipe.insertMany(data)
-  // .then(() => {
-  //   console.log('multiple recipes created')
-  // })
-  // .catch(() => {
-  //   console.log('Something went wrong while inserting')
-  // })
+  let insertMany = Recipe.insertMany(data)
+  .then(() => {
+    console.log('multiple recipes created')
+  })
+  .catch(() => {
+    console.log('Something went wrong while inserting')
+  })
 
 //Iteration4
-  // Recipe.findOneAndUpdate( {title: 'Rigatoni alla Genovese '}, {duration: 100} )
-  // .then((result) => {
-  //   console.log('The duration have have been updating')
-  // })
-  // .catch(() => {
-  //   console.log('Something went wrong while updating')
-  // })
+  Promise.all([createRecipe, insertMany])
+  .then(() => {
+    Recipe.updateOne({title:'Rigatoni alla Genovese'}, {duration: 100})
+    .then(() => {
+      console.log('The duration have have been updating', result)
+    })
+  })
+  .catch(() => {
+    console.log('Something went wrong while updating')
+  })
 
 // Iteration5
   Recipe.deleteOne({title:'Carrot Cake'})
