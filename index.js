@@ -21,12 +21,18 @@ mongoose
     // Before adding any documents to the database, let's delete all previous entries
     return self.connection.dropDatabase();
   })
-  .then(() => {
-    Recipe.create(data[0])
-      .then((result) => {
-        console.log(result.title)
-      })
-  })
+  
+  //Iteration2
+  // .then(() => {
+  //   let createRecipe = Recipe.create({title:"newFood", cuision:"Italian"})
+  //   createRecipe
+  //   .then((result) => {
+  //     console.log(result.title)
+  //   })
+  //   .catch(() => {
+  //     console.log('Error')
+  //   })
+  // })
   
   .then(() => {
     // Run your code here, after you have insured that the connection was made
